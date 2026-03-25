@@ -5,217 +5,377 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Preço no Posto</title>
-    <link rel="icon" href="public/images/logo.png" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-
-        .btn {
-            transition: all .25s ease;
-        }
-
-        .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, .15);
-        }
-
-        .card {
-            transition: all .25s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, .12);
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/Style.css" />
 </head>
 
-<body class="bg-white text-gray-900">
+<body>
 
-    <header class="fixed w-full bg-white/70 backdrop-blur border-b z-50">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="flex items-center gap-2">
-                <img src="public/images/logo.png" class="w-8 h-6" />
-                <h1 class="font-bold">Preço no Posto</h1>
-            </div>
-            <button onclick="openModal()" class="text-sm text-gray-600 hover:text-black">Termos</button>
+    <!-- HEADER -->
+    <header>
+        <div class="logo-wrap">
+            <img src="images/logo.png" alt="Logo Preço no Posto" />
+            <span>Preço no Posto</span>
         </div>
+        <nav>
+            <a href="#como">Como funciona</a>
+            <button onclick="openModal()">Termos</button>
+            <a href="#" class="btn-nav">Baixar App</a>
+        </nav>
     </header>
 
-    <section class="relative min-h-screen flex items-center pt-24 px-6 overflow-hidden">
-
+    <!-- HERO -->
+    <section class="hero relative min-h-screen flex items-center pt-24 px-6 overflow-hidden">
         <div class="absolute inset-0">
-            <img src="public/images/23593920-personalizadas-localizacao-mapa-interface-para-rede-e-movel-aplicativo-vetor.jpg"
+            <img src="images/23593920-personalizadas-localizacao-mapa-interface-para-rede-e-movel-aplicativo-vetor.jpg"
                 class="w-full h-full object-cover opacity-20 scale-110 animate-pulse" />
             <div class="absolute inset-0 bg-gradient-to-r from-white via-white/80 to-transparent"></div>
         </div>
 
-        <div class="relative max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-
+        <div class="hero-inner relative max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
             <div>
-                <h1 class="text-4xl md:text-6xl font-extrabold mb-6 leading-tight">
-                    Pare de pagar caro em combustível.
+                <div class="badge">
+                    <div class="live-dot"></div>
+                    Preços em tempo real
+                </div>
+
+                <h1 class="hero-title">
+                    Não abasteça <br> sem <br><span class="accent">conferir o preço.</span>
                 </h1>
 
-                <p class="text-lg text-gray-700 mb-6">
-                    📍 Compare preços em tempo real na sua região e economize em cada abastecimento.
+                <p class="hero-sub">
+                    Compare preços nos postos da sua região antes de abastecer. Atualizado pela própria comunidade de
+                    motoristas.
                 </p>
 
-                <p class="text-sm text-gray-500 mb-8">
-                    Atualizado pela comunidade • Dados em tempo real
-                </p>
+                <div class="cta-row flex flex-col items-center gap-4">
 
-                <div class="flex gap-4">
-                    <a href="#download" class="btn bg-blue-600 text-white px-6 py-3 rounded-xl">
-                        Ver preços perto de mim
+                    <a href="#" class="btn-outline flex items-center gap-2">
+                        <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M3.18 23.76c.3.17.64.22.97.14l13.12-7.57-2.9-2.9-11.19 10.33zm14.82-9.29L5.24.81C4.93.62 4.57.6 4.24.75L16.6 13.11l1.4 1.36zM20.72 10.2l-2.93-1.69-3.15 3.15 3.15 3.15 2.96-1.71c.84-.49.84-1.71-.03-2.9zM4.24.75c-.34.15-.57.5-.57.9v21.7c0 .4.23.75.57.9L16.6 12.01 4.24.75z" />
+                        </svg>
+                        Baixar na Google Play
                     </a>
-                    <a href="#como" class="btn px-6 py-3 border rounded-xl hover:bg-gray-100">
-                        Como funciona
-                    </a>
+
+                    <p class="text-sm text-gray-500">ou escaneie</p>
+
+                    <div class="bg-white p-3 rounded-2xl shadow-md hover:scale-105 transition">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://play.google.com/store"
+                            alt="QR Code" class="w-32 h-32" />
+                    </div>
+
+                </div>
+
+                <div class="social-row">
+                    <div class="avatars">
+                        <div class="avatar" style="background:#2563EB;margin-left:0;">CM</div>
+                        <div class="avatar" style="background:#0EA5E9;">FR</div>
+                        <div class="avatar" style="background:#10B981;">PT</div>
+                    </div>
+                    <p class="social-label">+300 motoristas já economizam todo mês</p>
                 </div>
             </div>
 
-            <div class="flex justify-center gap-6">
-                <div class="bg-black rounded-[40px] p-2 shadow-2xl w-[240px] hover:scale-105 transition">
-                    <div class="bg-black rounded-[32px] overflow-hidden">
-                        <img src="public/images/app-mapa.jpeg" class="w-full h-[480px] object-cover" />
+            <!-- MAP CARD -->
+            <div>
+                <div class="map-card">
+                    <div class="map-header">
+                        <div class="map-title">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="var(--blue)">
+                                <path
+                                    d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                            </svg>
+                            Postos próximos
+                        </div>
+                        <div class="fuel-pills">
+                            <span class="fuel-pill pill-gas">Gasolina</span>
+                            <span class="fuel-pill pill-eth">Etanol</span>
+                        </div>
+                    </div>
+
+                    <div class="map-view">
+                        <div class="map-grid"></div>
+                        <div class="map-road-h" style="top:48%;height:14px;"></div>
+                        <div class="map-road-h" style="top:20%;height:8px;"></div>
+                        <div class="map-road-v" style="left:32%;width:12px;"></div>
+                        <div class="map-road-v" style="left:68%;width:8px;"></div>
+
+                        <div class="pin" style="left:26%;top:22%;">
+                            <div class="pin-label">R$ 5,79</div>
+                            <div class="pin-stem"></div>
+                            <div class="pin-dot"></div>
+                        </div>
+
+                        <div class="pin" style="left:55%;top:12%;">
+                            <div class="pin-label muted">R$ 5,89</div>
+                            <div class="pin-stem muted"></div>
+                            <div class="pin-dot muted"></div>
+                        </div>
+
+                        <div class="pin" style="left:67%;top:50%;">
+                            <div class="pin-label muted">R$ 5,84</div>
+                            <div class="pin-stem muted"></div>
+                            <div class="pin-dot muted"></div>
+                        </div>
+
+                        <div class="pin" style="left:18%;top:55%;">
+                            <div class="pin-label best">R$ 5,69 ✓</div>
+                            <div class="pin-stem best"></div>
+                            <div class="pin-dot best"></div>
+                        </div>
+
+                        <div
+                            style="position:absolute;left:42%;top:44%;width:14px;height:14px;border-radius:50%;background:var(--blue);border:3px solid #fff;box-shadow:0 2px 8px rgba(37,99,235,0.4);">
+                        </div>
+                    </div>
+
+                    <div class="price-list">
+                        <div class="price-row best-row">
+                            <div class="row-left">
+                                <p>Auto Posto Amarelinho</p>
+                                <p>350m · atualizado há 4 min</p>
+                            </div>
+                            <div class="row-right">
+                                <p class="row-price green">R$ 6,33</p>
+                                <p class="row-tag tag-best">✓ Melhor preço</p>
+                            </div>
+                        </div>
+                        <div class="price-row">
+                            <div class="row-left">
+                                <p>Postos 3R's</p>
+                                <p>620m · atualizado há 11 min</p>
+                            </div>
+                            <div class="row-right">
+                                <p class="row-price">R$ 6,43</p>
+                                <p class="row-tag tag-diff">+R$ 0,10/L</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="stats-section reveal">
+        <div class="stats-grid">
+            <div class="stat-cell">
+                <div class="stat-num">1.200+</div>
+                <div class="stat-label">preços cadastrados</div>
+            </div>
+            <div class="stat-cell">
+                <div class="stat-num">300+</div>
+                <div class="stat-label">usuários ativos</div>
+            </div>
+            <div class="stat-cell">
+                <div class="stat-num">50+</div>
+                <div class="stat-label">postos monitorados</div>
+            </div>
+            <div class="stat-cell">
+                <div class="stat-num">R$2,10</div>
+                <div class="stat-label">economia média/L</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COMO FUNCIONA -->
+    <section id="como" class="steps-section">
+        <div style="max-width:1100px;margin:0 auto;">
+            <div class="reveal" style="margin-bottom:3rem;">
+                <p class="section-label">Simples assim</p>
+                <h2 class="section-title">Como funciona</h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-5">
+                <div class="step-card">
+                    <div class="step-icon">📍</div>
+                    <p class="step-num-label">Passo 01</p>
+                    <h3 class="step-title">Abra o app</h3>
+                    <p class="step-desc">Veja no mapa todos os postos próximos a você com preços atualizados em tempo
+                        real pela comunidade.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-icon">⚡</div>
+                    <p class="step-num-label">Passo 02</p>
+                    <h3 class="step-title">Compare preços</h3>
+                    <p class="step-desc">Filtre por tipo de combustível e encontre o melhor custo-benefício antes mesmo
+                        de sair de casa.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-icon">🤝</div>
+                    <p class="step-num-label">Passo 03</p>
+                    <h3 class="step-title">Ajude a comunidade</h3>
+                    <p class="step-desc">Abasteceu? Registre o preço e ajude outros motoristas. Quanto mais
+                        participação, melhores os dados.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <section class="reviews-section">
+        <div style="max-width:1100px;margin:0 auto;">
+            <div class="reveal" style="margin-bottom:3rem;text-align:center;">
+                <p class="section-label">Avaliações</p>
+                <h2 class="section-title">Quem usa, indica.</h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-5">
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">"Economizei quase R$15 no último abastecimento só de comparar dois postos na
+                        mesma rua. App indispensável."</p>
+                    <div class="review-author">
+                        <div class="author-avatar" style="background:#2563EB;">CM</div>
+                        <div>
+                            <p class="author-name">Carlos M.</p>
+                            <p class="author-city">Cuiabá, MT</p>
+                        </div>
                     </div>
                 </div>
 
-                <div
-                    class="bg-black rounded-[40px] p-2 shadow-2xl w-[240px] hidden md:block hover:scale-105 transition">
-                    <div class="bg-black rounded-[32px] overflow-hidden">
-                        <img src="public/images/app_novo_preco.jpeg" class="w-full h-[480px] object-cover" />
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">"Minha rotina agora é checar o app antes de sair. Os preços são atualizados
+                        rapidinho pela galera. 10/10."</p>
+                    <div class="review-author">
+                        <div class="author-avatar" style="background:#0EA5E9;">FR</div>
+                        <div>
+                            <p class="author-name">Fernanda R.</p>
+                            <p class="author-city">Várzea Grande, MT</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="stars">★★★★☆</div>
+                    <p class="review-text">"A ideia é excelente. Comunidade bem ativa aqui na cidade. Às vezes o preço
+                        está desatualizado, mas no geral funciona muito bem."</p>
+                    <div class="review-author">
+                        <div class="author-avatar" style="background:#10B981;">PT</div>
+                        <div>
+                            <p class="author-name">Paulo T.</p>
+                            <p class="author-city">Rondonópolis, MT</p>
+                        </div>
                     </div>
                 </div>
             </div>
-
         </div>
     </section>
 
-    <section class="py-20 bg-gray-50">
-        <div class="max-w-6xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div class="card p-4 rounded-xl bg-white">
-                <h3 class="text-3xl font-bold">+1.200</h3>
-                <p class="text-gray-500">preços atualizados</p>
+    <!-- CTA FINAL -->
+    <section class="cta-section">
+        <div style="position:relative;max-width:600px;margin:0 auto;" class="reveal">
+            <h2>Pare de pagar caro<br> no combustível.</h2>
+            <p>Os preços mudam todo dia. Saiba sempre onde está o melhor preço antes de chegar lá.</p>
+
+            <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-bottom:1.5rem;">
+                <!-- <a href="#" class="btn-white">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="var(--blue)">
+                        <path
+                            d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.7 9.05 7.42c1.42.07 2.38.74 3.2.8 1.22-.25 2.38-.96 3.7-.84 1.58.13 2.77.74 3.54 1.9-3.24 1.95-2.7 6.28.56 7.62-.8 1.38-1.14 2.71-3 3.38zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z" />
+                    </svg>
+                    App Store
+                </a> -->
+                <a href="#" class="btn-white">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M3.18 23.76c.3.17.64.22.97.14l13.12-7.57-2.9-2.9-11.19 10.33zm14.82-9.29L5.24.81C4.93.62 4.57.6 4.24.75L16.6 13.11l1.4 1.36zM20.72 10.2l-2.93-1.69-3.15 3.15 3.15 3.15 2.96-1.71c.84-.49.84-1.71-.03-2.9zM4.24.75c-.34.15-.57.5-.57.9v21.7c0 .4.23.75.57.9L16.6 12.01 4.24.75z" />
+                    </svg>
+                    Google Play
+                </a>
             </div>
-            <div class="card p-4 rounded-xl bg-white">
-                <h3 class="text-3xl font-bold">+300</h3>
-                <p class="text-gray-500">usuários ativos</p>
-            </div>
-            <div class="card p-4 rounded-xl bg-white">
-                <h3 class="text-3xl font-bold">+50</h3>
-                <p class="text-gray-500">postos monitorados</p>
-            </div>
-            <div class="card p-4 rounded-xl bg-white">
-                <h3 class="text-3xl font-bold">R$ 2,10</h3>
-                <p class="text-gray-500">economia média</p>
-            </div>
+
+            <p style="font-size:0.78rem;color:rgba(255,255,255,0.5);">Gratuito para Android</p>
         </div>
     </section>
 
-    <section id="como" class="py-20">
-        <div class="max-w-5xl mx-auto text-center px-6">
-            <h2 class="text-3xl font-bold mb-12">Como funciona</h2>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="card p-6 border rounded-2xl">
-                    <h3 class="text-xl font-semibold mb-2">1. Abra o app</h3>
-                    <p class="text-gray-600">Veja postos próximos no mapa</p>
-                </div>
-                <div class="card p-6 border rounded-2xl">
-                    <h3 class="text-xl font-semibold mb-2">2. Compare preços</h3>
-                    <p class="text-gray-600">Escolha o melhor custo-benefício</p>
-                </div>
-                <div class="card p-6 border rounded-2xl">
-                    <h3 class="text-xl font-semibold mb-2">3. Economize</h3>
-                    <p class="text-gray-600">Abasteça pagando menos</p>
-                </div>
-            </div>
+    <!-- FOOTER -->
+    <footer
+        style="padding:1.75rem 2rem;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:center;gap:1rem;flex-wrap:wrap;">
+        <div style="display:flex;align-items:center;gap:8px;">
+            <img src="images/logo.png" style="width:20px;height:20px;object-fit:contain;" />
+            <span style="font-size:0.85rem;font-weight:600;color:var(--dark);">Preço no Posto</span>
         </div>
-    </section>
-
-    <section class="py-20 bg-blue-600 text-white text-center" id="download">
-        <h2 class="text-3xl font-bold mb-4">Evite pagar mais caro hoje</h2>
-        <p class="mb-6">Os preços mudam rápido — confira antes de abastecer.</p>
-        <a href="public/images/app-release.apk" class="btn bg-white text-blue-600 px-8 py-3 rounded-xl font-semibold">
-            Baixar App
-        </a>
-    </section>
-
-    <footer class="py-6 text-center text-gray-500 text-sm">
-        © 2026 Preço no Posto |
-        <button onclick="openModal()" class="underline">Termos de Uso</button>
+        <span style="color:var(--border);">·</span>
+        <span style="font-size:0.8rem;color:var(--gray);">© 2026</span>
+        <span style="color:var(--border);">·</span>
+        <button onclick="openModal()"
+            style="font-size:0.8rem;color:var(--gray);background:none;border:none;cursor:pointer;text-decoration:underline;font-family:'Inter',sans-serif;">Termos
+            de Uso</button>
     </footer>
 
-    <div id="modal" class="fixed inset-0 bg-black/50 backdrop-blur-sm hidden items-center justify-center px-4">
-        <div
-            class="bg-white rounded-2xl max-w-2xl w-full max-h-[80vh] overflow-y-auto p-6 transform scale-95 opacity-0 transition-all duration-200">
-            <h2 class="text-xl font-bold mb-4">Termos de Uso</h2>
-            <p class="text-sm text-gray-600">
+    <!-- MODAL -->
+    <div id="modal">
+        <div class="modal-box">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1.25rem;">
+                <h2 style="font-size:1.1rem;font-weight:700;color:var(--dark);">Termos de Uso</h2>
+                <button onclick="closeModal()"
+                    style="background:#F3F4F6;border:none;color:#374151;width:30px;height:30px;border-radius:50%;cursor:pointer;font-size:1rem;display:flex;align-items:center;justify-content:center;">✕</button>
+            </div>
+            <p style="font-size:0.875rem;color:var(--gray);line-height:1.7;margin-bottom:1rem;">
                 <strong>1. Aceitação dos Termos</strong>
                 • Ao utilizar o Preço no Posto, você concorda com estes termos. Se não concordar, por favor, não utilize
-                o serviço.<br>
-
+                o serviço.
+            </p>
+            <p style="font-size:0.875rem;color:var(--gray);line-height:1.7;">
                 <strong>2. Responsabilidade pelas Informações</strong>
                 • O usuário é o único responsável pela veracidade dos preços de combustíveis que registrar no
                 aplicativo. O uso do app para inserir informações falsas ou abusivas resultará no banimento da
-                conta.<br>
-
+                conta.
+            </p>
+            <p style="font-size:0.875rem;color:var(--gray);line-height:1.7;">
                 <strong>3. Natureza do Serviço</strong>
                 • O Preço no Posto é uma ferramenta de colaboração comunitária. Não garantimos que o preço exibido no
                 app será exatamente o mesmo encontrado na bomba, uma vez que os preços podem sofrer alterações rápidas
-                pelos estabelecimentos.<br>
-
+                pelos estabelecimentos.
+            </p>
+            <p style="font-size:0.875rem;color:var(--gray);line-height:1.7;">
                 <strong>4. Uso de Localização</strong>
                 • O app depende do uso de GPS para funcionar corretamente. O usuário autoriza o rastreio de localização
-                enquanto o app estiver em uso para fins de geolocalização de postos.<br>
-
+                enquanto o app estiver em uso para fins de geolocalização de postos.
+            </p>
+            </p>
+            <p style="font-size:0.875rem;color:var(--gray);line-height:1.7;">
                 <strong>5. Limitação de Responsabilidade</strong>
                 • Não nos responsabilizamos por quaisquer danos decorrentes do uso das informações do app ou por
-                deslocamentos baseados em preços informados por terceiros.<br>
-
+                deslocamentos baseados em preços informados por terceiros.
+            </p>
+            <p style="font-size:0.875rem;color:var(--gray);line-height:1.7;">
                 <strong>6. Alterações</strong>
                 • Reservamo-nos o direito de modificar estes termos a qualquer momento, notificando os usuários através
                 do aplicativo.
             </p>
-            <div class="text-center mt-6">
-                <button onclick="closeModal()" class="btn bg-blue-600 text-white px-6 py-2 rounded-lg">Entendi</button>
+            <div style="text-align:center;margin-top:1.5rem;">
+                <button onclick="closeModal()" class="btn-primary">Entendi</button>
             </div>
         </div>
     </div>
 
     <script>
         function openModal() {
-            const m = document.getElementById('modal');
-            m.classList.remove('hidden');
-            m.classList.add('flex');
-            const box = m.querySelector('div');
-            box.classList.remove('scale-95', 'opacity-0');
-            box.classList.add('scale-100', 'opacity-100');
+            document.getElementById('modal').classList.add('open');
+            document.body.style.overflow = 'hidden';
         }
         function closeModal() {
-            const m = document.getElementById('modal');
-            const box = m.querySelector('div');
-            box.classList.remove('scale-100', 'opacity-100');
-            box.classList.add('scale-95', 'opacity-0');
-            setTimeout(() => {
-                m.classList.add('hidden');
-                m.classList.remove('flex');
-            }, 200);
+            document.getElementById('modal').classList.remove('open');
+            document.body.style.overflow = '';
         }
-
         document.getElementById('modal').addEventListener('click', function (e) {
-            if (e.target.id === 'modal') closeModal();
+            if (e.target === this) closeModal();
         });
-
-        document.addEventListener('keydown', function (e) {
+        document.addEventListener('keydown', e => {
             if (e.key === 'Escape') closeModal();
         });
-    </script>
 
+        const obs = new IntersectionObserver(entries => {
+            entries.forEach(el => { if (el.isIntersecting) el.target.classList.add('visible'); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+    </script>
 </body>
 
 </html>
