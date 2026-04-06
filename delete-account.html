@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exclusão de Dados - Preço no Posto</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gray-50 font-['Inter']">
+
+    <div class="max-w-md mx-auto my-12 p-8 bg-white rounded-3xl shadow-xl border border-gray-100">
+        <div class="text-center mb-8">
+            <img src="images/logo.png" alt="Logo" class="w-16 h-16 mx-auto mb-4">
+            <h1 class="text-2xl font-extrabold text-gray-900">Excluir minha conta</h1>
+            <p class="text-gray-500 text-sm mt-2">Esta ação apagará permanentemente todos os seus dados do app Preço no Posto.</p>
+        </div>
+
+        <form id="delete-form" class="space-y-4">
+            <div>
+                <label class="block text-sm font-semibold text-gray-700 mb-1">E-mail da conta</label>
+                <input type="email" id="user_email" required 
+                    placeholder="seu-email@exemplo.com"
+                    class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-red-500 focus:border-transparent outline-none transition">
+            </div>
+
+            <div class="bg-red-50 p-4 rounded-xl">
+                <p class="text-xs text-red-700 leading-tight">
+                    <strong>Aviso:</strong> Seu perfil e configurações serão removidos em até 30 dias após a solicitação.
+                </p>
+            </div>
+
+            <button type="submit" id="btn-submit"
+                class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-4 rounded-xl shadow-lg shadow-red-200 transition duration-200">
+                Confirmar Exclusão
+            </button>
+        </form>
+
+        <div id="success-msg" class="hidden text-center mt-6 p-4 bg-green-50 text-green-700 rounded-xl font-medium">
+            Solicitação enviada com sucesso! Verifique seu e-mail em breve.
+        </div>
+
+        <div class="mt-8 text-center">
+            <a href="index.html" class="text-sm text-gray-400 hover:text-gray-600 underline">Voltar para Home</a>
+        </div>
+    </div>
+
+    <script type="text/javascript">        
+        (function() {
+            emailjs.init("ir6exbRnQ4V7-PDgS");
+        })();
+
+        const form = document.getElementById('delete-form');
+        const btn = document.getElementById('btn-submit');
+        const msg = document.getElementById('success-msg');
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            btn.innerText = "Enviando...";
+            btn.disabled = true;
+
+            // Substitua pelos seus IDs do EmailJS
+            const serviceID = 'service_yo2uu5i';
+            const templateID = 'template_szw50mx';
+
+            emailjs.send(serviceID, templateID, {
+                user_email: document.getElementById('user_email').value,
+                email: document.getElementById('user_email').value,
+                to_name: "Patrick",
+                message: "Solicitação de exclusão de conta via formulário web."
+            })
+            .then(() => {
+                form.classList.add('hidden');
+                msg.classList.remove('hidden');
+            }, (err) => {
+                btn.innerText = "Confirmar Exclusão";
+                btn.disabled = false;
+                alert("Erro ao enviar. Tente novamente mais tarde.");
+                console.log(JSON.stringify(err));
+            });
+        });
+    </script>
+</body>
+</html>
