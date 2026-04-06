@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Termos e Privacidade - Preço no Posto</title>
+    <link rel="icon" href="images/logo.png" />
+    <link rel="stylesheet" href="Style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        .legal-section { padding: 100px 20px; max-width: 900px; margin: 0 auto; }
+        .legal-card { background: white; padding: 40px; border-radius: 24px; border: 1px solid #f3f4f6; box-shadow: 0 4px 20px rgba(0,0,0,0.03); }
+        .legal-content h2 { font-size: 1.5rem; font-weight: 800; color: #111827; margin-top: 2.5rem; margin-bottom: 1rem; display: flex; align-items: center; gap: 10px; }
+        .legal-content h2::before { content: ''; width: 4px; height: 24px; background: var(--blue); border-radius: 2px; }
+        .legal-content h3 { font-size: 1.1rem; font-weight: 700; color: #374151; margin-top: 1.5rem; margin-bottom: 0.5rem; }
+        .legal-content p { color: #6B7280; line-height: 1.7; margin-bottom: 1rem; font-size: 0.95rem; }
+        .legal-content ul { margin-bottom: 1rem; padding-left: 1.25rem; }
+        .legal-content li { color: #6B7280; margin-bottom: 0.5rem; list-style-type: disc; font-size: 0.95rem; }
+        .nav-tabs { display: flex; gap: 2rem; border-bottom: 2px solid #f3f4f6; margin-bottom: 2rem; }
+        .tab-link { padding-bottom: 1rem; font-weight: 600; color: #9CA3AF; cursor: pointer; transition: 0.2s; }
+        .tab-link.active { color: var(--blue); border-bottom: 2px solid var(--blue); }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+
+    <header>
+        <div class="logo-wrap">
+            <a href="index.html" class="flex items-center gap-2">
+                <img src="images/logo.png" alt="Logo" />
+                <span>Preço no Posto</span>
+            </a>
+        </div>
+        <nav>
+            <a href="index.html">Voltar para Home</a>
+            <a href="#" class="btn-nav">Baixar App</a>
+        </nav>
+    </header>
+
+    <main class="legal-section">
+        <div class="legal-card reveal">
+            
+            <div class="nav-tabs">
+                <div class="tab-link active" onclick="switchTab('termos')">Termos de Uso</div>
+                <div class="tab-link" onclick="switchTab('privacidade')">Privacidade</div>
+            </div>
+
+            <div id="termos" class="legal-content">
+                <h1 class="text-3xl font-extrabold text-gray-900 mb-4">Termos de Uso</h1>
+                <p>Ao utilizar o aplicativo <strong>Preço no Posto</strong>, você concorda com as regras e condições descritas abaixo. Este serviço é uma plataforma colaborativa para consulta de preços de combustíveis.</p>
+
+                <h2>1. Aceitação e Cadastro</h2>
+                <p>O acesso às funcionalidades de envio de preços requer autenticação via Google. Você é responsável por manter a segurança de sua conta e por todas as atividades realizadas nela.</p>
+
+                <h2>2. Veracidade das Informações</h2>
+                <p>Como uma plataforma comunitária, a precisão depende de você. O usuário se compromete a:</p>
+                <ul>
+                    <li>Registrar apenas valores reais visualizados nas bombas dos postos.</li>
+                    <li>Não inserir informações falsas com o intuito de prejudicar estabelecimentos ou enganar outros usuários.</li>
+                    <li>O uso indevido resultará na suspensão imediata da conta.</li>
+                </ul>
+
+                <h2>3. Isenção de Responsabilidade</h2>
+                <p>O Preço no Posto não é proprietário dos estabelecimentos listados. Não garantimos que o preço informado por um colaborador será o mesmo praticado no momento da sua chegada ao posto, visto que flutuações de mercado podem ocorrer sem aviso prévio.</p>
+            </div>
+
+            <div id="privacidade" class="legal-content" style="display:none;">
+                <h1 class="text-3xl font-extrabold text-gray-900 mb-4">Política de Privacidade</h1>
+                <p>Sua privacidade é nossa prioridade. Esta política detalha como tratamos seus dados no ecossistema do Preço no Posto.</p>
+
+                <h2>1. Dados de Localização</h2>
+                <p>O aplicativo coleta dados de localização precisa (GPS) para:</p>
+                <ul>
+                    <li>Identificar postos próximos à sua posição atual no mapa.</li>
+                    <li>Validar se você está realmente no posto ao enviar um novo preço (prova de presença).</li>
+                    <li>Estes dados são processados apenas enquanto o app está em uso.</li>
+                </ul>
+
+                <h2>2. Identificação do Usuário</h2>
+                <p>Coletamos seu e-mail e nome através do Google Auth para criar seu perfil de colaborador. Estes dados <strong>nunca</strong> são vendidos ou compartilhados com parceiros de marketing.</p>
+
+                <h2>3. Segurança dos Dados</h2>
+                <p>Utilizamos infraestrutura de ponta para garantir que seus registros e dados de perfil estejam protegidos contra acessos não autorizados.</p>
+
+                <h2>4. Exclusão de Conta</h2>
+                <p>Você tem o direito de excluir sua conta a qualquer momento. Ao solicitar a exclusão, todos os seus dados pessoais identificáveis serão removidos de nossa base em até 30 dias.</p>
+                
+                <p class="mt-8 text-sm italic">Para dúvidas, entre em contato através do domínio imperiofinancas.com.br</p>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="flex justify-center py-8 border-t border-gray-200 gap-4 text-gray-400 text-sm">
+        <span>© 2026 Preço no Posto</span>
+        <span>·</span>
+        <a href="index.html" class="underline">Página Inicial</a>
+    </footer>
+
+    <script>
+        function switchTab(tabId) {
+            // Esconde todos os conteúdos
+            document.getElementById('termos').style.display = 'none';
+            document.getElementById('privacidade').style.display = 'none';
+            
+            // Remove classe active de todos os links
+            document.querySelectorAll('.tab-link').forEach(link => link.classList.remove('active'));
+            
+            // Mostra o selecionado
+            document.getElementById(tabId).style.display = 'block';
+            
+            // Adiciona classe active ao link clicado
+            event.currentTarget.classList.add('active');
+        }
+
+        const obs = new IntersectionObserver(entries => {
+            entries.forEach(el => { if (el.isIntersecting) el.target.classList.add('visible'); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+    </script>
+</body>
+</html>

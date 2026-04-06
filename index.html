@@ -20,8 +20,8 @@
             <span>Preço no Posto</span>
         </div>
         <nav>
-            <a href="#como">Como funciona</a>
-            <button onclick="openModal()">Termos</button>
+            <a href="#como">Como funciona</a>            
+            <button onclick="window.location.href='privacidade.html'">Privacidade</button>
             <a href="#" class="btn-nav">Baixar App</a>
         </nav>
     </header>
@@ -304,74 +304,12 @@
         <span style="color:var(--border);">·</span>
         <span style="font-size:0.8rem;color:var(--gray);">© 2026</span>
         <span style="color:var(--border);">·</span>
-        <button onclick="openModal()"
+        <button onclick="window.location.href='privacidade.html'"
             style="font-size:0.8rem;color:var(--gray);background:none;border:none;cursor:pointer;text-decoration:underline;font-family:'Inter',sans-serif;">Termos
             de Uso</button>
-    </footer>
-
-    <!-- MODAL -->
-    <div id="modal">
-        <div class="modal-box">
-            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1.25rem;">
-                <h2 style="font-size:1.1rem;font-weight:700;color:var(--dark);">Termos de Uso</h2>
-                <button onclick="closeModal()"
-                    style="background:#F3F4F6;border:none;color:#374151;width:30px;height:30px;border-radius:50%;cursor:pointer;font-size:1rem;display:flex;align-items:center;justify-content:center;">✕</button>
-            </div>
-            <p style="font-size:0.875rem;color:var(--gray);line-height:1.7;margin-bottom:1rem;">
-                <strong>1. Aceitação dos Termos</strong>
-                • Ao utilizar o Preço no Posto, você concorda com estes termos. Se não concordar, por favor, não utilize
-                o serviço.
-            </p>
-            <p style="font-size:0.875rem;color:var(--gray);line-height:1.7;">
-                <strong>2. Responsabilidade pelas Informações</strong>
-                • O usuário é o único responsável pela veracidade dos preços de combustíveis que registrar no
-                aplicativo. O uso do app para inserir informações falsas ou abusivas resultará no banimento da
-                conta.
-            </p>
-            <p style="font-size:0.875rem;color:var(--gray);line-height:1.7;">
-                <strong>3. Natureza do Serviço</strong>
-                • O Preço no Posto é uma ferramenta de colaboração comunitária. Não garantimos que o preço exibido no
-                app será exatamente o mesmo encontrado na bomba, uma vez que os preços podem sofrer alterações rápidas
-                pelos estabelecimentos.
-            </p>
-            <p style="font-size:0.875rem;color:var(--gray);line-height:1.7;">
-                <strong>4. Uso de Localização</strong>
-                • O app depende do uso de GPS para funcionar corretamente. O usuário autoriza o rastreio de localização
-                enquanto o app estiver em uso para fins de geolocalização de postos.
-            </p>
-            </p>
-            <p style="font-size:0.875rem;color:var(--gray);line-height:1.7;">
-                <strong>5. Limitação de Responsabilidade</strong>
-                • Não nos responsabilizamos por quaisquer danos decorrentes do uso das informações do app ou por
-                deslocamentos baseados em preços informados por terceiros.
-            </p>
-            <p style="font-size:0.875rem;color:var(--gray);line-height:1.7;">
-                <strong>6. Alterações</strong>
-                • Reservamo-nos o direito de modificar estes termos a qualquer momento, notificando os usuários através
-                do aplicativo.
-            </p>
-            <div style="text-align:center;margin-top:1.5rem;">
-                <button onclick="closeModal()" class="btn-primary">Entendi</button>
-            </div>
-        </div>
-    </div>
+    </footer>    
 
     <script>
-        function openModal() {
-            document.getElementById('modal').classList.add('open');
-            document.body.style.overflow = 'hidden';
-        }
-        function closeModal() {
-            document.getElementById('modal').classList.remove('open');
-            document.body.style.overflow = '';
-        }
-        document.getElementById('modal').addEventListener('click', function (e) {
-            if (e.target === this) closeModal();
-        });
-        document.addEventListener('keydown', e => {
-            if (e.key === 'Escape') closeModal();
-        });
-
         const obs = new IntersectionObserver(entries => {
             entries.forEach(el => { if (el.isIntersecting) el.target.classList.add('visible'); });
         }, { threshold: 0.1 });
